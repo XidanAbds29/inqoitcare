@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import Community from "@/components/Community";
 import Features from "@/components/Features";
 import ComparisonTable from "@/components/ComparisonTable";
 import Pricing from "@/components/Pricing";
@@ -11,6 +12,7 @@ export default function Home() {
     <main className="min-h-screen bg-slate-950 text-slate-50 selection:bg-indigo-500/30">
       <Navbar />
       <Hero />
+      <Community />
       <Features />
       <ComparisonTable />
       <Pricing />

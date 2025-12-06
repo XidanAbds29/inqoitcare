@@ -28,7 +28,7 @@ export default function FAQ() {
     const [openIndex, setOpenIndex] = useState<number | null>(null);
 
     return (
-        <section className="py-20 px-4 bg-slate-900/30">
+        <section className="py-20 px-4 bg-muted/10">
             <div className="mx-auto max-w-3xl">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -38,7 +38,7 @@ export default function FAQ() {
                     className="mb-12 text-center"
                 >
                     <h2 className="text-3xl font-bold sm:text-4xl">
-                        Frequently Asked <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-cyan-400">Questions</span>
+                        Frequently Asked <span className="text-primary">Questions</span>
                     </h2>
                 </motion.div>
 
@@ -50,22 +50,22 @@ export default function FAQ() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.4, delay: index * 0.1 }}
-                            className="overflow-hidden rounded-xl border border-slate-800 bg-slate-900"
+                            className="overflow-hidden rounded-xl border border-border bg-card"
                         >
                             <button
                                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                                className="flex w-full items-center justify-between p-6 text-left font-semibold text-slate-200 hover:bg-slate-800/50"
+                                className="flex w-full items-center justify-between p-6 text-left font-semibold text-foreground hover:bg-muted/50"
                             >
                                 {faq.question}
                                 {openIndex === index ? (
-                                    <Minus className="h-5 w-5 text-indigo-400" />
+                                    <Minus className="h-5 w-5 text-primary" />
                                 ) : (
-                                    <Plus className="h-5 w-5 text-indigo-400" />
+                                    <Plus className="h-5 w-5 text-primary" />
                                 )}
                             </button>
                             <div
                                 className={cn(
-                                    "px-6 text-slate-400 transition-all duration-300 ease-in-out",
+                                    "px-6 text-muted-foreground transition-all duration-300 ease-in-out",
                                     openIndex === index ? "max-h-40 pb-6 opacity-100" : "max-h-0 opacity-0"
                                 )}
                             >
